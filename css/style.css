@@ -1,0 +1,317 @@
+/* ==========Start Variable ========== */
+:root {
+  /* Color V */
+  --main-color: #10cab7;
+  --background-color: #f6f6f6;
+  --secondry-color: #2c4755;
+  /* Time V */
+  --main-time: 0.9s;
+}
+/* ========== End Variable ========== */
+/* ========== Start Global Rules ========== */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  margin: 0;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* ========== Start My Laberary ========== */
+.section{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.special-heading{
+  text-align: center;
+  color: #ebeced;
+  font-size: 90px;
+  letter-spacing: -3px;
+  margin: 0;
+  font-weight: 800;
+  user-select: none;
+}
+.special-heading + p{
+  font-size: 19px;
+  text-align: center;
+  margin: -30px 0 0;
+  color: #797979;
+  user-select: none;
+}
+@media (max-width:767px) {
+  .special-heading{
+    font-size: 80px;
+    letter-spacing: -1px;
+  }
+  .special-heading + p{
+    font-size: 18px;
+    margin-top:-22px;
+  }
+}
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px , 1fr));
+  column-gap: 30px;
+}
+/* ========== End My Laberary ========== */
+/* ========== Start Header Section ========== */
+.header {
+  padding: 20px;
+  position: relative;
+}
+.header .background{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.header .logo {
+  width: 80px;
+  position: relative;
+  z-index: 2;
+}
+.header .links{
+  position: relative;
+}
+.header .links .icon{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1px;
+  cursor: pointer;
+  z-index: 2;
+}
+.header .links .icon span{
+  height: 2px;
+  background-color: #000;
+}
+.header .links .nav{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 20px);
+  width: 200px;
+  transform: translateY(-150%);
+  transition: var(--main-time) all;
+}
+.header .links .nav.active{
+  transform: translateY(0);
+}
+.header .links .nav li{
+  position: relative;
+  padding: 11px;
+  background-color: #eee;
+  transition: var(--main-time) all;
+  cursor: pointer;
+  user-select: none;
+}
+.header .links .nav li:not(:last-child){
+  border-bottom: 1px solid #0000002e;
+}
+.header .links .nav li:hover{
+  background-color: #ddd;
+  padding-left: 17px;
+}
+.header .links .nav li::before{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  top: 97%;
+  background: var(--main-color);
+  transition: var(--main-time) width;
+}
+.header .links .nav li:hover::before{
+width: 100%;
+}
+.header .links .nav li a{
+  color: #000;
+}
+/* ========== End Header Section ========== */
+/* ========== Start Landing Section ========== */
+.landing {
+background-image: url('../images/landing.jpg');
+height: calc(100vh - 75px);
+background-size: cover;
+}
+.landing .intro-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  user-select: none;
+}
+@media (max-width:767px) {
+  .landing .intro-text{
+    width: 95%;
+  }
+}
+.landing .intro-text h1{
+  margin: 0;
+  color: var(--main-color);
+  font-size: 40px;
+}
+.landing .intro-text P{
+  line-height: 1.8;
+  font-size: 19px;
+}
+@media (max-width: 767px) {
+  .landing .intro-text h1{
+    font-size: 30px;
+  }.landing .intro-text P{
+    font-size: 16px;
+  }
+}
+/* ========== End Landing Section ========== */
+/* ========== Start Features Section ========== */
+.features{
+background-color:var(--background-color);
+}
+.features .container{
+  gap: 20px;
+}
+.features .feat{
+  text-align: center;
+  padding: 20px 12px;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  border-radius: 40% 40% 4% 4%;
+  transition: var(--main-time) border-radius;
+}
+.features .feat:hover{
+border-radius: 10% 10% 4% 4%;
+}
+.features .feat svg{
+  color: var(--main-color);
+  font-size: 40px;
+  cursor: pointer;
+}
+.features .feat h3{
+  font-weight: 800;
+    font-size: 22px;
+    margin: 7px 0 15px;
+    cursor: pointer;
+    user-select: none;
+}
+.features .feat p{
+  line-height: 1.6;
+  margin: 0;
+  color: #777;
+}
+/* ========== End Features Section ========== */
+/* ========== Start Services Section ========== */
+
+.services .services-content{
+  margin-top: 60px;
+}
+.services .services-content .col{
+}
+.services .services-content .col .serv{
+  display: flex;
+  margin-bottom: 40px;
+}
+@media (max-width:767px) {
+  .services .services-content .col .serv{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .services-content .col .serv svg{
+  flex-basis: 50px;
+  font-size: 30px;
+  color: var(--main-color);
+}
+.services .services-content .col .serv .content-text{
+  flex: 1;
+}
+.services .services-content .col .serv .content-text h3{
+  margin: 0 0 20px;
+}
+@media (max-width:767px) {
+  .services .services-content .col .serv .content-text h3{
+    margin: 20px 0 20px;
+  }
+}
+.services .services-content .col .serv .content-text p{
+  line-height: 1.6;
+  color: #444;
+}
+.services .services-content .col .image{
+  position: relative;
+  text-align: center;
+}
+.services .services-content .col .image::before{
+  content: "";
+  position: absolute;
+  background-color: var(--secondry-color);
+  width: 100px;
+  height: calc(100% + 100px);
+  top: -50px;
+  right: 0px;
+  z-index: -1
+
+}
+.services .services-content .col .image img{
+  width: 260px;
+}
+@media (max-width: 1199px) {
+  .services .services-content .col:last-child {
+    display: none;
+  }
+  .services .services-content .col .image::before{
+ display: none;
+  
+  }
+}
+/* ========== End Services Section ========== */
