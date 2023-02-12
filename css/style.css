@@ -55,7 +55,6 @@ a {
     width: 970px;
   }
 }
-
 /* Large */
 @media (min-width: 1200px) {
   .container {
@@ -410,7 +409,7 @@ a {
 
 /* ========== Start About Section ========== */
 .about {
-  background-color: ;
+  background-color: var(--background-color);
 }
 
 .about .content-about {
@@ -467,7 +466,6 @@ a {
     text-align: center;
   }
 }
-
 .about .content-about .text hr {
   width: 50%;
   border-color: var(--main-color);
@@ -488,7 +486,6 @@ a {
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 30px;
-
   }
   
   .about .content-about .text p:last-child {
