@@ -97,6 +97,7 @@ a {
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .grid-3 {
@@ -369,6 +370,7 @@ a {
 }
 
 /* ========== End Services Section ========== */
+
 /* ========== Start PortFolio Section  ========== */
 .portfolio {
   background-color: var(--background-color);
@@ -405,3 +407,93 @@ a {
 }
 
 /* ========== End PortFolio Section ========== */
+
+/* ========== Start About Section ========== */
+.about {
+  background-color: ;
+}
+
+.about .content-about {
+  margin-top: 60px;
+}
+
+.about .content-about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 992px) {
+  .about .content-about {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.about .content-about .image {
+  position: relative;
+  width: 300px;
+}
+
+.about .content-about .image img {
+  max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  border-radius: 15px;
+}
+
+.about .content-about .image::before{
+  content: '';
+  border:none;
+  position: absolute;
+  right: -140px;
+  top: -36px;
+  height: 300px;
+  background-color: transparent;
+  width: 106px;
+  border-left: 90px solid var(--main-color);
+  border-bottom: 73px solid var(--main-color);
+  z-index: -1;
+}
+@media (max-width:767px) {
+  .about .content-about .image::before{
+    display: none;
+  }
+}
+.about .content-about .text {
+  flex-basis: calc(100% - 500px)
+}
+@media (max-width: 992px) {
+  .about .content-about .text {
+    flex-basis: 100%;
+    margin-top: 70px;
+    text-align: center;
+  }
+}
+
+.about .content-about .text hr {
+  width: 50%;
+  border-color: var(--main-color);
+  display: inline-block;
+}
+.about .content-about .text p:first-child {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+
+.about .content-about .text p:last-child {
+  line-height: 2;
+  color: #777;
+}
+@media (max-width:767px) {
+  .about .content-about .text p:first-child {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+
+  }
+  
+  .about .content-about .text p:last-child {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+/* ========== End About Section ========== */
